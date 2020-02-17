@@ -1,0 +1,58 @@
+on: push
+name: task1
+
+jobs:
+  build:
+    runs-on: windows-2019
+    timeout-minutes: 5
+
+    name: Task1
+
+    steps:
+    - name: Checkout the Lab repo
+      uses: actions/checkout@v2
+      with:
+        path: lab
+
+    - name: Checkout the grader-tools repo
+      uses: actions/checkout@v2
+      with:
+        repository: av-pavlov/grader-tools
+        ref: master
+        path: tools
+
+    - name: Checkout the tests repo
+      uses: actions/checkout@v2
+      with:
+        repository: progivt19/c02if-test
+        ref: master
+        path: tests
+
+    - name: Build the project
+      run: |
+        @echo off
+        set INCLUDE=C:\Program Files (x86)\Microsoft SDKs\Windows\V7.1A\Include;%GITHUB_WORKSPACE%\tools
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x86
+        echo off
+        echo ПЕРЕХОЖУ В ПАПКУ %GITHUB_WORKSPACE%\lab\${{github.workflow}}
+        cd %GITHUB_WORKSPACE%\lab\${{github.workflow}}
+        rmdir /S /Q Debug
+        echo CE>${{github.workflow}}.res
+        set DefaultPlatformToolset=v142
+        set MSBUILD="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+        %GITHUB_WORKSPACE%\tools\build.cmd
+      shell: cmd 
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: '3.7' # Semantic version range syntax or exact version of a Python version
+        architecture: 'x86  ' # Optional - x64 or x86, defaults to x64
+
+    - name: Test the task
+      run: |
+        chcp 65001
+        cd %GITHUB_WORKSPACE%\lab\${{github.workflow}}
+        python %GITHUB_WORKSPACE%\tools\arbiter.py -w %GITHUB_WORKSPACE%\lab\${{github.workflow}} -t %GITHUB_WORKSPACE%\tests\${{github.workflow}} -r %GITHUB_WORKSPACE%\lab
+        type %GITHUB_WORKSPACE%\lab\${{github.workflow}}\arbiter.log
+      shell: cmd
