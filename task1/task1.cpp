@@ -15,5 +15,5 @@ int main(){
 	cin >> n;
 	if (n < 0) 
 		cout << "OTR\n";
-	return 0;
+	return  0;
 }
