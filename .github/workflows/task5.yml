@@ -54,5 +54,4 @@ jobs:
         chcp 65001
         cd %GITHUB_WORKSPACE%\lab\${{github.workflow}}
         python %GITHUB_WORKSPACE%\tools\arbiter.py -w %GITHUB_WORKSPACE%\lab\${{github.workflow}} -t %GITHUB_WORKSPACE%\test\${{github.workflow}} -r %GITHUB_WORKSPACE%\lab
-        type %GITHUB_WORKSPACE%\lab\${{github.workflow}}\arbiter.log
       shell: cmd
