@@ -1,12 +1,9 @@
-/* 
-  4. Напишите программу, которая вводит с клавиатуры возраст n лет и
-  выводит сообщение ВАМ n ЛЕТ/ГОДА/ГОД, используя правильное слово, 
-  если 1 <= n <= 100, или ERROR в противном случае (используйте
-  setlocale("ru", LC_ALL);).
-*/
-#define _CRT_SECURE_NO_WARNINGS
+// 4. Напишите программу, которая вводит с клавиатуры возраст n лет и
+// выводит сообщение ВАМ n ЛЕТ/ГОДА/ГОД, используя правильное слово, 
+// если 1 <= n <= 100, или ERROR в противном случае 
+// (На Windows используйте setlocale("ru", LC_ALL);).
 
-#include <clocale>
+#include <clocale> //Win
 #include <iostream>
 
 using namespace std;
@@ -14,7 +11,7 @@ using namespace std;
 int main(){
 	int n;
 
-	setlocale(LC_ALL, "ru");
+	setlocale(LC_ALL, "ru");//Win
 	cin >> n;
 
     cout << "ВАМ " << n << " ЛЕТ\n";
