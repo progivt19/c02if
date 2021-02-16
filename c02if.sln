@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task1", "task1\task1.vcxproj", "{2CAB63F2-CDAF-47CE-A76F-6278832F6544}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "if-01", "if-01\task1.vcxproj", "{2CAB63F2-CDAF-47CE-A76F-6278832F6544}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task2", "task2\task2.vcxproj", "{B4DC5709-A667-4ABB-A5FF-32C7240558C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "if-02", "if-02\task2.vcxproj", "{B4DC5709-A667-4ABB-A5FF-32C7240558C7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task3", "task3\task3.vcxproj", "{15ED4BA8-31B7-4956-A4CC-A2A55020DF7F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "if-03", "if-03\task3.vcxproj", "{15ED4BA8-31B7-4956-A4CC-A2A55020DF7F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task4", "task4\task4.vcxproj", "{C054DDCB-37C3-4F07-A39A-D8CAEA4DE4CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "if-04", "if-04\task4.vcxproj", "{C054DDCB-37C3-4F07-A39A-D8CAEA4DE4CE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task5", "task5\task5.vcxproj", "{EA029D3E-0B9B-4937-B8A4-83F01C4F19C9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "if-05", "if-05\task5.vcxproj", "{EA029D3E-0B9B-4937-B8A4-83F01C4F19C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
